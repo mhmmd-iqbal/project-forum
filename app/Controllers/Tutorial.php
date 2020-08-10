@@ -9,20 +9,18 @@ class Tutorial extends BaseController
     {
         $data = [
             'judul' => 'FORUM IT | Tutorial',
-            'judulkonten' => '<h1>IT <strong>Tutorial</strong></h1>',
             'active' => 'tutorial'
         ];
-        return view('konten/tutorial-template', $data);
+        return view('konten/tutorial', $data);
     }
 
     public function page($judul = '')
     {
         $data = [
             'judul' => 'FORUM IT | TUTORIAL',
-            'judulkonten' => '<h1><strong>' . $judul . '</strong></h1>',
             'active' => 'tutorial'
         ];
-        return view('konten/tutorialpage-template', $data);
+        return view('konten/tutorialpage', $data);
     }
 
     //--------------------------------------------------------------------

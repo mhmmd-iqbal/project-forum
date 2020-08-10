@@ -30,37 +30,16 @@
 
     <!-- Nav Item - Pages Collapse Menu -->
     <!-- Nav Item - Charts -->
-    <li class="nav-item">
-        <a class="nav-link" href="/admin/profile">
-            <i class="fas fa-fw fa-cog"></i>
-            <span>Tentang Aplikasi</span></a>
-    </li>
-    <!-- <li class="nav-item ">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-            <i class="fas fa-fw fa-cog"></i>
-            <span>Tentang Aplikasi</span>
-        </a>
-        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Profile Data:</h6>
-                <a class="collapse-item" href="/admin/profile">Profile</a>
-                <a class="collapse-item" href="/admin/visimisi">Visi Misi</a>
-                <a class="collapse-item" href="/admin/email">Email</a>
-                <a class="collapse-item" href="/admin/team">Anggota Tim</a>
-            </div>
-        </div>
-    </li> -->
-
     <li class="nav-item ">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
             <i class="fas fa-fw fa-user"></i>
-            <span>Hak Akses</span>
+            <span>Master Data</span>
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Hak Akses Data:</h6>
-                <a class="collapse-item" href="">Admin</a>
-                <a class="collapse-item" href="">User</a>
+                <a class="collapse-item" href="/wps/admin">Admin</a>
+                <a class="collapse-item" href="/wps/user">User</a>
                 <!-- <a class="collapse-item" href="/admin/pendidikan">Pendidikan</a> -->
 
             </div>

@@ -2,41 +2,67 @@
 
 namespace App\Controllers;
 
+use App\Models\UserModel;
+
 class Login extends BaseController
 {
 
+    protected $session;
+    function __construct()
+    {
+        $this->session = \Config\Services::session();
+    }
+
     public function index()
     {
-        return view('login');
+        $data['error'] = $this->session->error;
+        return view('login', $data);
     }
 
     public function signIn()
     {
+
         if ($this->request->getMethod() == 'post') {
             $username = $this->request->getVar('username');
             $email = $this->request->getVar('email');
             $pass = $this->request->getVar('pass');
 
-            $where = [
-                'username'  => $username,
-                'email'     => $email,
+            $dataModel = new UserModel;
+            $data = $dataModel->checkUser($username, $email)->first();
+
+            if ($data == null) {
+                $this->session->setFlashdata('error', 'Password, Email dan Username Tidak Sesuai');
+                return redirect()->to('/login');
+            }
+            $cekPass = $data['pass'];
+            $res =  password_verify($pass, $cekPass);
+
+            if ($res == FALSE) {
+                $this->session->setFlashdata('error', 'Password, Email dan Username Tidak Sesuai');
+                return redirect()->to('/login');
+            }
+            $sessionData = [
+                'logged_in' => TRUE,
+                'username'  => $data['username'],
+                'level'     => $data['level'],
+                'email'     => $data['email'],
             ];
+            $this->session->set($sessionData);
 
-            // BELUM SIAP LAGI 
-            $db    = \Config\Database::connect();
-            $builder = $db->table('tb_user');
-            $builder->select(['username', 'name', 'pass']);
-            $query = $builder->getWhere($where);
-
-            dd($query->getResultObject());
-
-            // SAMPE SINI TADI 
+            switch ($data['level']) {
+                case "1":
+                    return redirect()->to('/admin');
+                    break;
+                default:
+                    $this->session->setFlashdata('error', 'Sabar ya, Programmer lagi nge Develop hak akses kamu');
+                    return redirect()->to('/login');
+            }
         }
-
-        // return redirect()->to('/Admin/dashboard');
     }
+
     public function signOut()
     {
+        $this->session->destroy();
         return redirect()->to('/');
     }
 

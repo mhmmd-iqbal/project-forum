@@ -8,10 +8,9 @@ class Home extends BaseController
 	{
 		$data = [
 			'judul' => 'FORUM IT | HOME',
-			'judulkonten' => '<h1>The <strong>Hub</strong> Of <strong>Tutorials</strong></h1>',
 			'active' => 'home'
 		];
-		return view('konten/template', $data);
+		return view('konten/home', $data);
 	}
 
 

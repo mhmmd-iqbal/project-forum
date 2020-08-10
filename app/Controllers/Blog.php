@@ -9,20 +9,18 @@ class Blog extends BaseController
     {
         $data = [
             'judul' => 'FORUM IT | BLOG',
-            'judulkonten' => '<h1><strong>Blog</strong></h1>',
             'active' => 'blog'
         ];
-        return view('konten/blog-template', $data);
+        return view('konten/blog', $data);
     }
 
     public function page($judul = '')
     {
         $data = [
             'judul' => 'FORUM IT | BLOG',
-            'judulkonten' => '<h1><strong>' . $judul . '</strong></h1>',
             'active' => 'blog',
         ];
-        return view('konten/blogpage-template', $data);
+        return view('konten/blogpage', $data);
     }
 
     //--------------------------------------------------------------------

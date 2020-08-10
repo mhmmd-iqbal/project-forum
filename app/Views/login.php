@@ -21,6 +21,24 @@
     <link rel="stylesheet" type="text/css" href="<?= base_url() ?>/assets/login/css/util.css">
     <link rel="stylesheet" type="text/css" href="<?= base_url() ?>/assets/login/css/main.css">
     <!--===============================================================================================-->
+
+    <style>
+        .container-login100 {
+            width: 100%;
+            min-height: 100vh;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+            background: #588daa;
+
+        }
+    </style>
 </head>
 
 <body>
@@ -33,11 +51,19 @@
                 </div>
 
                 <form class="login100-form validate-form" method="POST" action="<?= base_url() ?>/login/signIn">
+
                     <?= csrf_field(); ?>
                     <span class="login100-form-title">
                         Member Login
                     </span>
-
+                    <?php if ($error != null) : ?>
+                        <div class="alert alert-danger" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <p><?= $error ?></p>
+                        </div>
+                    <?php endif; ?>
                     <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
                         <input class="input100" type="text" name="email" placeholder="Email">
                         <span class="focus-input100"></span>
@@ -69,12 +95,13 @@
                     </div>
 
                     <div class="text-center p-t-12">
-                        <span class="txt1">
-                            Forgot
-                        </span>
-                        <a class="txt2" href="#">
-                            Username / Password?
+                        <!-- <span class="txt1">
+                            Kembali
+                        </span> -->
+                        <a class="txt2" href="/">
+                            <i class="fa fa-long-arrow-left m-l-5" aria-hidden="true"></i> Kembali Ke Halaman Utama
                         </a>
+
                     </div>
 
                     <div class="text-center p-t-136">

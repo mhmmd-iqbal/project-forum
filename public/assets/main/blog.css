@@ -1,0 +1,31 @@
+.my-blog .card-header p,
+.my-blog .card-body p {
+  font-size: 12px;
+  margin: auto 0;
+  font-style: italic;
+  color: rgb(161, 161, 161);
+}
+.my-blog p {
+  text-align: right;
+}
+.my-blog a {
+  color: #68a4c4;
+}
+
+.my-blog a:hover {
+  color: #5d92af;
+  transition: ease-in 0.2s;
+}
+
+.gambar {
+  /* max-width: 400px; */
+  /* height: auto; */
+  float: none;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: none;
+}
+.gambar img {
+  object-fit: cover;
+  width: 100%;
+}

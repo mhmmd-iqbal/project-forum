@@ -8,9 +8,9 @@ class Ebook extends BaseController
     {
         $data = [
             'judul' => 'FORUM IT | E BOOK',
-            'judulkonten' => '<h1> <strong>E-Book</strong></h1>',
             'active' => 'ebook'
         ];
+        return view('konten/ebook', $data);
     }
 
 
