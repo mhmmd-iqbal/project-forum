@@ -15,6 +15,7 @@ class Filters extends BaseConfig
 
 		// New Aliases
 		'admin_auth' => \App\Filters\FilterAdmin::class,
+		'user_auth' => \App\Filters\FilterUser::class,
 	];
 
 	// Always applied before every request

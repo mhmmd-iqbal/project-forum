@@ -51,8 +51,12 @@ class Login extends BaseController
 
             switch ($data['level']) {
                 case "1":
-                    return redirect()->to('/admin');
+                    return redirect()->to('/wps');
                     break;
+                case "2":
+                    return redirect()->to('/tutor');
+                    break;
+
                 default:
                     $this->session->setFlashdata('error', 'Sabar ya, Programmer lagi nge Develop hak akses kamu');
                     return redirect()->to('/login');

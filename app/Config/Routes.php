@@ -36,6 +36,9 @@ $routes->get('/', 'Home::index');
 $routes->get('/blog/(:segment)', 'Blog::page/$1');
 $routes->get('/tutorial/(:segment)', 'Tutorial::page/$1');
 
+$routes->group('tutor', ['filter' => 'user_auth'], function ($routes) {
+	$routes->add('', 'User\ControllerUser::dashboard');
+});
 $routes->group('wps', ['filter' => 'admin_auth'], function ($routes) {
 	$routes->add('', 'Admin\ControllerAdmin::dashboard');
 	$routes->add('admin', 'Admin\ControllerAdmin::admin');
